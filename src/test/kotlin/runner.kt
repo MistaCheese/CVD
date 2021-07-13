@@ -6,9 +6,9 @@ class CVD {
         if (localPathToDriver.isEmpty() || localPathToChromeBrowser.isEmpty()) {
             println("Не указаны пути до папки с драйверами или до папки с браузером")
         } else {
-            if (getLastLocalVersion() != getLastOnlineVersionChrome()) {
+            if (CheckLocal().getLastLocalVersion() != CheckOnline().getLastOnlineVersionChrome()) {
                 println("Начинаю загрузку файла")
-                run()
+                Server().run()
                 println("Загрузка и распаковка завершена")
             } else {
                 println("Версии драйверов совпадают")

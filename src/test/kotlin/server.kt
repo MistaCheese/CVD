@@ -1,4 +1,5 @@
-import UnzipUtils.unzip
+
+import Server.UnzipUtils.unzip
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.*
@@ -14,10 +15,10 @@ class Server {
     fun run() { // Запуск загрузки и распаковки файла в указанную папку
         val buildVersion =
             "https://chromedriver.storage.googleapis.com/" + getLastReleaseBuild() + "/chromedriver_win32.zip"
-        download(buildVersion, localPath1 + getLastOnlineVersionChrome() + localPath2)
+        download(buildVersion, localPath1 + CheckOnline().getLastOnlineVersionChrome() + localPath2)
         unzip(
-            File(localPath1 + getLastOnlineVersionChrome() + localPath2),
-            localPath1 + getLastOnlineVersionChrome()
+            File(localPath1 + CheckOnline().getLastOnlineVersionChrome() + localPath2),
+            localPath1 + CheckOnline().getLastOnlineVersionChrome()
         )
 
     }

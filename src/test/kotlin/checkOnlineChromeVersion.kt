@@ -21,7 +21,7 @@ class CheckOnline {
     }
 
     fun getLastOnlineVersionChrome(): String? {  // Отдает именно версию, а не билд
-        return getResponse(urlLink)?.let { getLastStableBuildChrome(it).split(".").first() }
+        return Server().getResponse(Server().urlLink)?.let { getLastStableBuildChrome(it).split(".").first() }
     }
 }
 
