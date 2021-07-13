@@ -1,7 +1,6 @@
-import org.junit.Assert
 import java.io.File
 import java.lang.Exception
-import java.util.*
+
 import kotlin.collections.ArrayList
 
 var link: String = CVD().getLocalPathToChromeBrowser()
