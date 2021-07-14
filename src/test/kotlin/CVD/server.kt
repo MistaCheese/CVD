@@ -1,5 +1,5 @@
-
-import Server.UnzipUtils.unzip
+package CVD
+import CVD.Server.UnzipUtils.unzip
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.*
@@ -9,10 +9,10 @@ import java.util.zip.ZipFile
 
 class Server {
     val urlLink: String = "http://omahaproxy.appspot.com/all?csv=1"
-    val localPath1: String = CVD().getLocalPathToDriver()
-    val localPath2: String = "\\chromedriver.zip"
 
-    fun run() { // Запуск загрузки и распаковки файла в указанную папку
+    private val localPath2: String = "\\chromedriver.zip"
+
+    fun run(localPath1: String) { // Запуск загрузки и распаковки файла в указанную папку
         val buildVersion =
             "https://chromedriver.storage.googleapis.com/" + getLastReleaseBuild() + "/chromedriver_win32.zip"
         download(buildVersion, localPath1 + CheckOnline().getLastOnlineVersionChrome() + localPath2)

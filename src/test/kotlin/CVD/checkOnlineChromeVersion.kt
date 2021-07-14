@@ -1,3 +1,5 @@
+package CVD
+
 class CheckOnline {
     fun getLastStableBuildChrome(allVersionString: String): String {     // Парсим список версий и получаем последний стабильный билд
         val s1: List<String> = allVersionString.split("\n")

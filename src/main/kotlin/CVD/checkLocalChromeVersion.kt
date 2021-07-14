@@ -5,13 +5,10 @@ import java.io.File
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
-class CheckLocal {
-    var link: String = CVD().getLocalPathToChromeBrowser()
+class CheckLocal () {
 
 
-    fun getLastLocalVersion(): String {
-        return checkLocalVersions(link).toString()
-    }
+
 
     fun checkLocalVersions(link: String): String { // Получение версии из локального хранилища в корне хрома
         val versionSet: ArrayList<String> = ArrayList()
