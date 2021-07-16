@@ -1,9 +1,7 @@
-package CVD
+package CVD.check
 
-import org.junit.Assert
 import java.io.File
 import java.lang.Exception
-import java.util.*
 import kotlin.collections.ArrayList
 class CheckLocal () {
 

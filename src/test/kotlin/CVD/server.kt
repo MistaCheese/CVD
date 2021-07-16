@@ -1,5 +1,7 @@
 package CVD
+
 import CVD.Server.UnzipUtils.unzip
+import CVD.check.CheckOnline
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.*
@@ -21,6 +23,14 @@ class Server {
             localPath1 + CheckOnline().getLastOnlineVersionChrome()
         )
 
+    }
+
+    fun getPath(localPath1: String): String { // Возвращает путь, куда нужно положить новый драйвер
+        return localPath1 + CheckOnline().getLastOnlineVersionChrome() + "\\chromedriver.exe"
+    }
+
+    fun checkDriver(path: String): Boolean { // Проврека, что драйвер по указанному пути существует
+        return File(path).isFile
     }
 
     private val client: OkHttpClient = OkHttpClient.Builder()
@@ -51,7 +61,7 @@ class Server {
         }
     }
 
-    fun download(link: String, path: String) { // Метод по загрузке
+    private fun download(link: String, path: String) { // Метод по загрузке
 
         URL(link).openStream().use { input ->
             FileOutputStream(File(path)).use { output ->

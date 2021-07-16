@@ -1,4 +1,6 @@
-package CVD
+package CVD.check
+
+import CVD.Server
 
 class CheckOnline {
     fun getLastStableBuildChrome(allVersionString: String): String {     // Парсим список версий и получаем последний стабильный билд
