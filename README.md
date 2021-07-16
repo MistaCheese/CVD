@@ -34,3 +34,9 @@
 	dependencies {
 	        implementation 'com.github.MistaCheese:CVD:"Версия билда"'
 	}
+
+Шаг 3 
+	Указываем пути, пример
+
+CVD("C:\\webDriver\\chrome\\", "C:\\Program Files (x86)\\Google\\Chrome\\Application").check()
+System.setProperty("webdriver.chrome.driver", Server().getPath("C:\\webDriver\\chrome\\"))
